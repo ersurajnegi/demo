@@ -1,0 +1,15 @@
+<form>
+        <div class="form-group">
+                <label for="email">Name : </label>
+                <input type="email" name class="form-control" id="name" [value]="student?.name">
+        </div>
+        <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="number" class="form-control" id="pwd" [value]="student?.rollNumber">
+        </div>
+
+        <div class="form-group">
+                <label>Present</label>
+                <ui-switch color="green" defaultBgColor="red" labelOn="Yes" [checked]="student?.isPresentToday" labelOff="No"></ui-switch>
+        </div>
+</form>

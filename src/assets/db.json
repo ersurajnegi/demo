@@ -1,0 +1,24 @@
+{
+        "studentDetails": [
+                {
+                        "name": "Suraj",
+                        "rollNumber": 1,
+                        "isPresentToday": true
+                },
+                {
+                        "name": "Pragya",
+                        "rollNumber": 2,
+                        "isPresentToday": false
+                },
+                {
+                        "name": "Raj",
+                        "rollNumber": 3,
+                        "isPresentToday": true
+                },
+                {
+                        "name": "Salman",
+                        "rollNumber": 4,
+                        "isPresentToday": false
+                }
+        ]
+}

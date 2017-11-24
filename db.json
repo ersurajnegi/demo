@@ -1,0 +1,44 @@
+{
+        "studentDetails": [
+                {
+                        "name": "Suraj",
+                        "rollNumber": 1,
+                        "isPresentToday": true
+                },
+                {
+                        "name": "Pragya",
+                        "rollNumber": 2,
+                        "isPresentToday": false
+                },
+                {
+                        "name": "Raj",
+                        "rollNumber": 3,
+                        "isPresentToday": true
+                },
+                {
+                        "name": "Salman",
+                        "rollNumber": 4,
+                        "isPresentToday": false
+                }
+        ],
+        "1" : {
+                "name": "Suraj",
+                "rollNumber": 1,
+                "isPresentToday": true
+        },
+        "2" : {
+                "name": "Pragya",
+                "rollNumber": 2,
+                "isPresentToday": false
+        },
+        "3" : {
+                "name": "Raj",
+                "rollNumber": 3,
+                "isPresentToday": true
+        },
+        "4" : {
+                "name": "Salman",
+                "rollNumber": 4,
+                "isPresentToday": false
+        }
+}

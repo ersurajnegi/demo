@@ -13,7 +13,7 @@ export class AppComponent {
         name: string;
         search: string;
         constructor() {
-                this.title = 'Angular Lover';
+                this.title = 'Hello Angular!!';
                 this.numberOne = 10;
                 this.numberTwo = 20;
                 this.isHappy = true;
