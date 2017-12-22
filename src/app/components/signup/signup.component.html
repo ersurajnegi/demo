@@ -1,0 +1,125 @@
+<form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+        <div class="form-group" 
+                [ngClass]="{
+                        'has-success' : userName.valid,
+                        'has-danger' : userName.invalid && userName.touched
+                }">
+                <label for="name">Name</label>
+                <input type="email" class="form-control" id="name" name="name" 
+                        [ngClass]="{
+                                'form-control-success' : userName.valid,
+                                'form-control-danger' : userName.invalid && userName.touched
+                        }"
+                        [ngModel]="user.name" 
+                        #userName="ngModel" 
+                        required minlength="2"/>
+                <div class="alert alert-danger" *ngIf="userName.invalid && userName.touched">
+                        <div *ngIf="userName.errors?.required">       
+                                Name is required!!!
+                        </div>
+                        <div *ngIf="userName.errors?.minlength">       
+                                Minimum 2 charcters is required!!!
+                        </div>
+                </div>
+        </div>
+
+
+
+        <div class="form-group"
+                [ngClass]="{
+                        'has-success' : email.valid,
+                        'has-danger' : email.invalid && email.touched
+                }">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" name="email" 
+                        [ngClass]="{
+                                'form-control-success' : email.valid,
+                                'form-control-danger' : email.invalid && email.touched
+                        }"
+                        #email="ngModel"
+                        [ngModel]="user.email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                        required />
+                <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+                        <div *ngIf="email.errors?.required">       
+                                        Email is required!!!
+                        </div>
+                        <div *ngIf="email.errors?.pattern">       
+                                Email is invalid!!!
+                        </div>
+                </div>
+        </div>
+
+
+
+        <div ngModelGroup="password">
+                <div class="form-group"
+                [ngClass]="{
+                        'has-success' : pwd.valid,
+                        'has-danger' : pwd.invalid && pwd.touched
+                }">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" 
+                                [ngClass]="{
+                                        'form-control-success' : pwd.valid,
+                                        'form-control-danger' : pwd.invalid && pwd.touched
+                                }"
+                                name="pwd" 
+                                [ngModel] = "user.password.pwd"
+                                #pwd="ngModel" 
+                                required />
+                        <div *ngIf="pwd.touched">
+                                <div  class="alert alert-danger" *ngIf="pwd.errors?.required">       
+                                                Password is required!!!
+                                </div>
+                        </div>
+                </div>
+
+
+                <div class="form-group"
+                [ngClass]="{
+                        'has-success' : confirmPwd.valid,
+                        'has-danger' : confirmPwd.invalid && confirmPwd.touched
+                }">
+                   
+                        <label for="pwd22">Confirm Password:</label>
+                        <input type="password" class="form-control" id="pwd22"
+                                [ngClass]="{
+                                        'form-control-success' : confirmPwd.valid,
+                                        'form-control-danger' : confirmPwd.invalid && confirmPwd.touched
+                                }"
+                                name="confirmPwd" 
+                                [ngModel] = "user.password.confirmPwd"
+                                #confirmPwd="ngModel"
+                                required />
+                        <div  *ngIf="confirmPwd.touched">
+                                <div class="alert alert-danger" *ngIf="confirmPwd.errors?.required">       
+                                        Confirm Password is required!!!
+                                </div>
+                        </div>
+                        <div   *ngIf="pwd.touched && confirmPwd.touched">
+                                <div class="alert alert-danger"*ngIf="pwd.value != confirmPwd.value">       
+                                                Password & Confirm should Match!!!
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-outline-success">
+                Sign Up
+        </button>
+
+        <button type="button" class="btn btn-primary btn-outline-secondary">Cancel</button>
+
+
+        <!-- <div class="form-group">
+                Form Values : {{ form.value | json }}
+        </div>
+
+
+        <div class="form-group">
+                component Values : {{ user | json}}
+        </div> -->
+</form>

@@ -1,3 +1,4 @@
+import { SignupComponent } from './components/signup/signup.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,7 +8,9 @@ import { ProfileComponent } from 'app/components/profile/profile.component';
 
 
 const appRoutes: Routes = [
-        { path: '', component: LoginComponent },
+        { path: '', component: SignupComponent },
+        { path: 'login', component: LoginComponent },
+        { path: 'sign', component: SignupComponent },
         { path: 'list', component: StudentListComponent },
         { path: 'profile/:id', component: ProfileComponent },
         { path: '**', component: NotFoundComponent }

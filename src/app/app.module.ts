@@ -10,6 +10,8 @@ import { AppRoutingModule } from 'app/app.routing.module';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UiSwitchModule } from 'ngx-toggle-switch/src';
+import { SignupComponent } from './components/signup/signup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
         declarations: [
@@ -18,13 +20,15 @@ import { UiSwitchModule } from 'ngx-toggle-switch/src';
                 NotFoundComponent,
                 StudentListComponent,
                 StudentDetailsComponent,
-                ProfileComponent
+                ProfileComponent,
+                SignupComponent
         ],
         imports: [
                 BrowserModule,
                 HttpClientModule,
                 AppRoutingModule,
-                UiSwitchModule
+                UiSwitchModule,
+                FormsModule
         ],
         providers: [ApiService],
         bootstrap: [AppComponent]
